@@ -1,8 +1,9 @@
-// ignore: file_names
+
+
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-
+import 'package:rotract_app_latest/Contact Us/Contact Us.dart';
 
 
 
@@ -14,26 +15,19 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
      return Scaffold(
-
-
        drawer:Padding(
-         padding: EdgeInsets.only(top: 1,),
+         padding: EdgeInsets.only(top: 1),
          child: Drawer(
-
-
-
-
            child:
            Container(
              color: Colors.black.withOpacity(0.85),
              child: ListView(
                children: [
-
-
                  Container(
                    color: Colors.white,
 
@@ -46,7 +40,7 @@ class _HomepageState extends State<Homepage> {
 
                    leading: Icon(Icons.home, color: Colors.grey),
                    onTap: () {
-                    // Navigator.pushNamed(context, '/');
+                     Navigator.pushNamed(context, '/');
                    },
 
 
@@ -74,13 +68,45 @@ class _HomepageState extends State<Homepage> {
 
 
 
+
                        ],
                      ),
                    ],
                    initiallyExpanded: false,
                  ),
+                 ListTile(
+                   title: Text("Rotary",style: TextStyle(color: Colors.white),),
+
+                   leading: Icon(Icons.settings, color: Colors.grey),
+                   onTap: () {
+                     // Navigator.pushNamed(context, '/');
+                   },
+
+
+                 ),
+                 ListTile(
+                   title: Text("Board",style: TextStyle(color: Colors.white),),
+
+                   leading: Icon(Icons.people_rounded, color: Colors.grey),
+                   onTap: () {
+                     // Navigator.pushNamed(context, '/');
+                   },
+
+
+                 ),
+                 ListTile(
+                   title: Text("Contact Us",style: TextStyle(color: Colors.white),),
+
+                   leading: Icon(Icons.phone, color: Colors.grey),
+                   onTap: () {
+                      Navigator.pushNamed(context, '/Contact');
+                   },
+
+
+                 ),
 
                ],
+
              ),
            ),
 
@@ -88,14 +114,7 @@ class _HomepageState extends State<Homepage> {
          ),
 
        ),
-       // appBar: AppBar(
-       //   backgroundColor: Colors.transparent,
-       //
-       //   leading: IconButton(
-       //     icon: Icon(Icons.home),
-       //     onPressed: () => Scaffold.of(context).openDrawer(),
-       //   ),
-       // ),
+
 
 
        body: SafeArea(
@@ -137,9 +156,18 @@ class _HomepageState extends State<Homepage> {
                          height: MediaQuery.of(context).size.height*0.2,)),
 
                    Container(
-                     child: AppBar(
-                       backgroundColor: Colors.white.withOpacity(0),
 
+                     child: Padding(
+                       padding: EdgeInsets.only(top: 10),
+                       child: AppBar(
+                         leading: Builder(
+                           builder:  (context) => IconButton(
+                             icon:  CircleAvatar(backgroundImage: AssetImage("assets/cake3.png"),radius: 30 ,),
+                             onPressed: () => Scaffold.of(context).openDrawer(),
+                           ),
+                         ),
+                         backgroundColor: Colors.transparent.withOpacity(0),
+                       ),
                      ),
 
 
@@ -165,83 +193,7 @@ class _HomepageState extends State<Homepage> {
 
 
 
-       SafeArea(
-      child: SingleChildScrollView(
-        child: Container(
 
-          child:
-            Stack(
-              children :[
-
-                Center(
-                child:
-                Image.asset("assets/Insta temp (2).jpg",height: screenSize.height,width: screenSize.width*1.0,
-                  fit: BoxFit.cover,),
-
-
-              ),
-
-                Positioned(
-                    child:Center(
-
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(0, 500, 0, 0),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height*0.9,
-                          width: MediaQuery.of(context).size.width*1.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.0),
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                ),
-                Positioned(
-                  left: 30,
-                    child: Image.asset("assets/Title_logo.png",
-                      width: MediaQuery.of(context).size.width*0.9,
-                      height: MediaQuery.of(context).size.height*0.2,)),
-
-                Container(
-                  child: AppBar(
-                    backgroundColor: Colors.white.withOpacity(0),
-
-                  ),
-
-
-                ),
-    //             Drawer(
-    //               child: ListView(
-    //
-    //                   padding: EdgeInsets.zero,
-    //                   children: <Widget>[
-    //               DrawerHeader(
-    //               child: Column(
-    //                   children: [
-    //                   Image.asset('assets/title_logo.png',
-    //                   height: 120.0, width: 250.0, scale: 0.1),
-    //               Text('Rotaract Club of BIT'),
-    //               ],
-    //             ),
-    //
-    //   ),
-    //   ]
-    // ),
-    //
-    //
-    //
-    //             ),
-
-              ]
-            ),
-
-
-          ),
-
-      ),
-
-    );
 
   }
 }

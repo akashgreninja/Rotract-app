@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1064988775671",
+    "project_id": "rotract-app",
+    "storage_bucket": "rotract-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064988775671:android:17802cc1a4d822e893aff2",
+        "android_client_info": {
+          "package_name": "com.example.rotract_app_latest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064988775671-hf5vuhvt7q6mdjshvogb091ho8hudnr4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rotract_app_latest",
+            "certificate_hash": "61e7ccabf25926e9fb541b9c2bbbe02549466d1b"
+          }
+        },
+        {
+          "client_id": "1064988775671-7qnacpvn1p5o1bfmqgcfp78ttv5rtd91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHp4rOtb36JplPOWZnmHViuw9jKTFTbp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064988775671-7qnacpvn1p5o1bfmqgcfp78ttv5rtd91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
