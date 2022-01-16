@@ -56,7 +56,8 @@ class _GoogleLoginState extends State<GoogleLogin> {
                     left: 30,
                     child: Image.asset("assets/Title_logo.png",
                       width: MediaQuery.of(context).size.width*0.9,
-                      height: MediaQuery.of(context).size.height*0.2,)),
+                      height: MediaQuery.of(context).size.height*0.2,)
+                ),
 
                 Positioned(
                   bottom: 140,
@@ -64,14 +65,14 @@ class _GoogleLoginState extends State<GoogleLogin> {
 
                     child:ElevatedButton(
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.red),
+                          backgroundColor: MaterialStateProperty.all(Colors.green[500]),
                           shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-                        side: MaterialStateProperty.all(BorderSide(width: 2,color: Colors.white)),
+                        // side: MaterialStateProperty.all(BorderSide(width: 2,)),
                         padding: MaterialStateProperty.all(EdgeInsets.only(left: 30,right: 30,top: 20,bottom: 20))
                           
 
                       ),
-                      child: Text("Sign in/Register",style: GoogleFonts.aBeeZee(fontSize: 30),),
+                      child: Text("Sign in/Register",style: GoogleFonts.aBeeZee(fontSize: 30,color: Colors.white),),
                       onPressed: () async{
                         await googleSignIn.signOut();
                         try{

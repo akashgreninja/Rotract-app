@@ -34,7 +34,7 @@ class Rotractapp extends StatelessWidget {
         '/Contact': (context) => Contact(),
 
       },
-      initialRoute: '/Loading',
+      initialRoute: '/',
 
     );
 

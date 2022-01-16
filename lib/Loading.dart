@@ -25,7 +25,7 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     Timer(
-        Duration(seconds: 7),
+        Duration(seconds: 3),
             () =>
             Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (BuildContext context) => GoogleLogin())));

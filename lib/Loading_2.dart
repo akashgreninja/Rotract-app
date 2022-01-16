@@ -25,7 +25,7 @@ class _Loading_2State extends State<Loading_2 > {
   @override
   Widget build(BuildContext context) {
     Timer(
-        Duration(seconds: 5),
+        Duration(seconds: 7),
             () =>
             Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (BuildContext context) => Homepage())));

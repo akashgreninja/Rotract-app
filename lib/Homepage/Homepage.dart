@@ -15,6 +15,26 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  ScrollController _scrollController;
+  double _opacity = 0;
+  double _scrollPosition = 0;
+
+  _scrollListener() {
+    setState(() {
+      _scrollPosition = _scrollController.position.pixels;
+    });
+  }
+  @override
+  void initState() {
+    _scrollController = ScrollController();
+    _scrollController.addListener(() {
+      _scrollListener();
+    });
+
+    super.initState();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +99,7 @@ class _HomepageState extends State<Homepage> {
 
                    leading: Icon(Icons.settings, color: Colors.grey),
                    onTap: () {
-                     // Navigator.pushNamed(context, '/');
+                      Navigator.pushNamed(context, '/Rotary');
                    },
 
 
@@ -119,25 +139,25 @@ class _HomepageState extends State<Homepage> {
 
        body: SafeArea(
          child: SingleChildScrollView(
-           child: Container(
+           child: Stack(
+               children :[
 
-             child:
-             Stack(
-                 children :[
-
-                   Center(
+                 Center(
+                   child:
+                   Opacity(
+                     opacity: 0.9,
                      child:
-                     Image.asset("assets/Insta temp (2).jpg",height: screenSize.height,width: screenSize.width*1.0,
-                       fit: BoxFit.cover,),
-
-
+                     Image.asset("assets/Insta temp (1).jpg",height: screenSize.height*0.8,width: screenSize.width*1.0,
+                       fit: BoxFit.fill,),
                    ),
+                 ),
 
-                   Positioned(
-                     child:Center(
+                 Positioned(
+                   child:Center(
 
-                       child: Padding(
-                         padding: EdgeInsets.fromLTRB(0, 500, 0, 0),
+                     child: Padding(
+                       padding: EdgeInsets.fromLTRB(0, 500, 0, 0),
+                       child: SingleChildScrollView(
                          child: Container(
                            height: MediaQuery.of(context).size.height*0.9,
                            width: MediaQuery.of(context).size.width*1.0,
@@ -149,35 +169,33 @@ class _HomepageState extends State<Homepage> {
                        ),
                      ),
                    ),
-                   Positioned(
-                       left: 30,
-                       child: Image.asset("assets/Title_logo.png",
-                         width: MediaQuery.of(context).size.width*0.9,
-                         height: MediaQuery.of(context).size.height*0.2,)),
+                 ),
+                 // Positioned(
+                 //     left: 30,
+                 //     child: Image.asset("assets/Title_logo.png",
+                 //       width: MediaQuery.of(context).size.width*0.9,
+                 //       height: MediaQuery.of(context).size.height*0.2,)),
 
-                   Container(
+                 Container(
 
-                     child: Padding(
-                       padding: EdgeInsets.only(top: 10),
-                       child: AppBar(
-                         leading: Builder(
-                           builder:  (context) => IconButton(
-                             icon:  CircleAvatar(backgroundImage: AssetImage("assets/cake3.png"),radius: 30 ,),
-                             onPressed: () => Scaffold.of(context).openDrawer(),
-                           ),
-                         ),
-                         backgroundColor: Colors.transparent.withOpacity(0),
-                       ),
+                   child: Padding(
+                     padding: EdgeInsets.only(top: 10),
+                     child: AppBar(
+                       // leading: Builder(
+                       //   builder:  (context) => IconButton(
+                       //     icon:  CircleAvatar(backgroundImage: AssetImage("assets/cake3.png"),radius: 30 ,),
+                       //     onPressed: () => Scaffold.of(context).openDrawer(),
+                       //   ),
+                       // ),
+                       backgroundColor: Colors.transparent.withOpacity(0),
                      ),
-
-
                    ),
 
 
-                 ]
-             ),
+                 ),
 
 
+               ]
            ),
 
          ),
