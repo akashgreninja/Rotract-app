@@ -1,4 +1,12 @@
+
+
+//Rotract_2 is same as Board but like in 100 lines lol apparently there was a way
+//  to just add the card once and then add dynamic memory but i spent hours doing Board so i have kept that
+//just use Rotract_2 if you want to make changes
+
 import 'package:flutter/material.dart';
+import 'package:rotract_app_latest/Board/Board.dart';
+import 'package:rotract_app_latest/Board/Rotract_2.dart';
 import 'package:rotract_app_latest/Homepage/Homepage.dart';
 import 'package:rotract_app_latest/Contact Us/Contact Us.dart';
 import 'package:rotract_app_latest/Loading.dart';
@@ -32,9 +40,12 @@ class Rotractapp extends StatelessWidget {
         '/Register':(context)=>Register(),
 
         '/Contact': (context) => Contact(),
+        '/Board':(context)=>Board(),
+        // '/Rotract_2':(context)=>Rotract_2(),
+
 
       },
-      initialRoute: '/',
+      initialRoute: '/Loading',
 
     );
 
