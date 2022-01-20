@@ -72,13 +72,13 @@ class _RotaryState extends State<Rotary> {
                         ListTile(
                           title: Text("Events",style: TextStyle(color: Colors.white),),
                           onTap: () {
-                            // Navigator.pushNamed(context, '/');
+                             Navigator.pushNamed(context, '/Events');
                           },
                         ),
                         ListTile(
                           title: Text("Upcoming events",style: TextStyle(color: Colors.white),),
                           onTap: () {
-                            // Navigator.pushNamed(context, '/');
+                             Navigator.pushNamed(context, '/u_events');
                           },
                         ),
 
@@ -94,7 +94,7 @@ class _RotaryState extends State<Rotary> {
 
                   leading: Icon(Icons.settings, color: Colors.grey),
                   onTap: () {
-                    // Navigator.pushNamed(context, '/');
+                     Navigator.pushNamed(context, '/Rotary');
                   },
 
 
@@ -104,7 +104,7 @@ class _RotaryState extends State<Rotary> {
 
                   leading: Icon(Icons.people_rounded, color: Colors.grey),
                   onTap: () {
-                    // Navigator.pushNamed(context, '/');
+                     Navigator.pushNamed(context, '/Board');
                   },
 
 
@@ -187,6 +187,22 @@ class _RotaryState extends State<Rotary> {
                           child: Stack(
                             children: [
                               Positioned(
+                                  top: MediaQuery.of(context).size.height*0.01,
+                                  left: MediaQuery.of(context).size.width*0.4,
+                                  child: Container(
+                                    width: 70,
+                                    height: 4,
+                                    decoration: BoxDecoration(
+                                        color: Colors.grey,
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        ),
+                                        borderRadius: BorderRadius.all(Radius.circular(20))
+                                    ),
+
+
+                                  )),
+                              Positioned(
                                   top: MediaQuery.of(context).size.width*0.18,
                                   left: MediaQuery.of(context).size.width*0.08,
                                   right: MediaQuery.of(context).size.width*0.050,
@@ -204,7 +220,7 @@ class _RotaryState extends State<Rotary> {
 
                               ),
                               Positioned(
-                                top: MediaQuery.of(context).size.width*1.9,
+                                top: MediaQuery.of(context).size.width*2.0,
                                 left: MediaQuery.of(context).size.width*0.20,
                                 right: MediaQuery.of(context).size.width*0.20,
 
@@ -332,7 +348,7 @@ class _RotaryState extends State<Rotary> {
 
                               ),
                               Positioned(
-                                top: MediaQuery.of(context).size.width*7.6,
+                                top: MediaQuery.of(context).size.width*7.8,
                                 left: MediaQuery.of(context).size.width*0.20,
                                 right: MediaQuery.of(context).size.width*0.20,
 

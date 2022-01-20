@@ -240,13 +240,13 @@ class _BoardState extends State<Board> {
                         ListTile(
                           title: Text("Events",style: TextStyle(color: Colors.white),),
                           onTap: () {
-                            // Navigator.pushNamed(context, '/');
+                             Navigator.pushNamed(context, '/Events');
                           },
                         ),
                         ListTile(
                           title: Text("Upcoming events",style: TextStyle(color: Colors.white),),
                           onTap: () {
-                            // Navigator.pushNamed(context, '/');
+                             Navigator.pushNamed(context, '/u_events');
                           },
                         ),
 
@@ -355,6 +355,22 @@ class _BoardState extends State<Board> {
 
                           child: Stack(
                             children: [
+                              Positioned(
+                                  top: MediaQuery.of(context).size.height*0.01,
+                                  left: MediaQuery.of(context).size.width*0.4,
+                                  child: Container(
+                                    width: 70,
+                                    height: 4,
+                                    decoration: BoxDecoration(
+                                        color: Colors.grey,
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        ),
+                                        borderRadius: BorderRadius.all(Radius.circular(20))
+                                    ),
+
+
+                                  )),
                               Positioned(
                                   top:40,
                                   left: 70,
@@ -2116,8 +2132,8 @@ class _BoardState extends State<Board> {
                               ),
                               Positioned(
                                   bottom:MediaQuery.of(context).size.width*0.03,
-                                  left:MediaQuery.of(context).size.width*0.33,
-                                  child:Text("© Rotract Club of BIT")
+                                  left:MediaQuery.of(context).size.width*0.30,
+                                  child:Text("© Rotract Club of BIT",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.blue[900]),)
                               ),
                             ],
                           ),

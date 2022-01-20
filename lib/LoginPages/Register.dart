@@ -299,7 +299,17 @@ class _RegisterState extends State<Register> {
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(left: 130,top: 20),
-                                        child: ElevatedButton(style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.pinkAccent)),
+                                        child: ElevatedButton( style: ButtonStyle(
+                                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(18.0),
+                                            ),
+                                          ),
+                                          backgroundColor: MaterialStateProperty.all(Colors.blue)
+                                            
+                                        ),
+
+
                                           onPressed: () async{
 
                                             createProfileKey.currentState.save();
@@ -357,7 +367,8 @@ class _RegisterState extends State<Register> {
 
 
                                           },
-                                          child: Text("Register",style: TextStyle(fontSize: 20),),
+                                          child: Text(" Continue ",style: TextStyle(fontSize: 20),),
+                                          
 
                                         ),
                                       ),
@@ -377,7 +388,7 @@ class _RegisterState extends State<Register> {
                                   left: 70,
 
                                   child: Text("Register",style: GoogleFonts.aBeeZee(
-                                      decoration: TextDecoration.none,fontSize: 60,color: Colors.pinkAccent),)
+                                      decoration: TextDecoration.none,fontSize: 60,color: Colors.blue[500]),)
                               ),
 
 

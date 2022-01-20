@@ -7,6 +7,8 @@
 import 'package:flutter/material.dart';
 import 'package:rotract_app_latest/Board/Board.dart';
 import 'package:rotract_app_latest/Board/Rotract_2.dart';
+import 'package:rotract_app_latest/Events/Events.dart';
+import 'package:rotract_app_latest/Events/Upcoming_events.dart';
 import 'package:rotract_app_latest/Homepage/Homepage.dart';
 import 'package:rotract_app_latest/Contact Us/Contact Us.dart';
 import 'package:rotract_app_latest/Loading.dart';
@@ -42,6 +44,8 @@ class Rotractapp extends StatelessWidget {
         '/Contact': (context) => Contact(),
         '/Board':(context)=>Board(),
         // '/Rotract_2':(context)=>Rotract_2(),
+        '/u_events':(context)=>Upcoming_events(),
+        '/Events':(context)=>Events(),
 
 
       },
