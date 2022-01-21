@@ -35,12 +35,9 @@ class _LoadingState extends State<Loading> {
       Scaffold(
       backgroundColor: Colors.black54,
       body: Container(
-        child:  InkWell(
-          child: SpinKitFoldingCube(
-            color: Colors.red,
-            size: 50.0,
-          ),
-          onTap: () { Navigator.pushNamed(context, '/');},
+        child:  SpinKitFoldingCube(
+          color: Colors.red,
+          size: 50.0,
         ),
         
 

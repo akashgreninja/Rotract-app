@@ -1,23 +1,33 @@
 
+
+
+
+
+
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:rotract_app_latest/Events/Events.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rotract_app_latest/About.dart';
 
 
-
-
-class Upcoming_events extends StatefulWidget {
+class About extends StatefulWidget {
 
 
   @override
-  _Upcoming_eventsState createState() => _Upcoming_eventsState();
+  _AboutState createState() => _AboutState();
 }
 
-class _Upcoming_eventsState extends State<Upcoming_events> {
+class _AboutState extends State<About> {
+
   @override
   Widget build(BuildContext context) {
+
+
     var screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
 
 
@@ -71,13 +81,13 @@ class _Upcoming_eventsState extends State<Upcoming_events> {
                         ListTile(
                           title: Text("Events",style: TextStyle(color: Colors.white),),
                           onTap: () {
-                            // Navigator.pushNamed(context, '/');
+                            Navigator.pushNamed(context, '/Events');
                           },
                         ),
                         ListTile(
                           title: Text("Upcoming events",style: TextStyle(color: Colors.white),),
                           onTap: () {
-                             Navigator.pushNamed(context, '/u_events');
+                            Navigator.pushNamed(context, '/u_events');
                           },
                         ),
 
@@ -142,7 +152,7 @@ class _Upcoming_eventsState extends State<Upcoming_events> {
       ),
 
 
-      body: SafeArea(
+      body: Container(
         child: Stack(
             children :[
 
@@ -160,65 +170,72 @@ class _Upcoming_eventsState extends State<Upcoming_events> {
               ),
 
 
-              Stack(
-                children: [
+              SingleChildScrollView(
 
-                  SingleChildScrollView(
-
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          child: AppBar(
-                            backgroundColor: Colors.white.withOpacity(0),
-
-                          ),
-
-
-                        ),
-                        // Container(
-                        //   child: AppBar(
-                        //     backgroundColor: Colors.white.withOpacity(0),
-                        //
-                        //   ),
-                        //
-                        //
-                        // ),
-                        SizedBox(height: 170,),
-                        Container(
-                          height: MediaQuery.of(context).size.height*0.5,
-                          width: MediaQuery.of(context).size.width*1.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30.0),
-                            color: Colors.white,
-                          ),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                  top: 160,
-                                  left: 20,
-                                  child:Text("Coming soon ",style: GoogleFonts.aBeeZee(fontSize:60 ))),
-                            ],
-                          ),
-                        ),
-
-
-
-
-
-
-                      ],
-
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AppBar(
+                      backgroundColor: Colors.white.withOpacity(0),
 
                     ),
 
 
-                  ),
+                    SizedBox(height: 190,),
+                    Container(
+                      // height: MediaQuery.of(context).size.height*4.4,
+                      width: MediaQuery.of(context).size.width*1.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30.0),
+                        color: Colors.white,
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding:EdgeInsets.only(top: 9),
+                            child: Container(
+                              width: 70,
+                              height: 4,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  border: Border.all(
+                                    color: Colors.grey,
+                                  ),
+                                  borderRadius: BorderRadius.all(Radius.circular(20))
+                              ),
+
+
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: Text("About",style: GoogleFonts.aBeeZee(fontSize: 40,fontWeight: FontWeight.bold),),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20,left: 20,right: 30),
+                            child: Text("This app is developed using Flutter \nmade by Rtr.Akash Uday (web service director) for the Rotaract club of BIT          ",style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.bold),),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20,left: 20,right: 30),
+                            child: Text("Special thanks to \nAkshay Kumar U Apsangi and the Rotract team for assisting me  ",style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.bold),),
+                          ),
+
+                          Padding(
+                            padding: const EdgeInsets.only(top: 70,left: 20,right: 30),
+                            child: Text(" If you encounter any bugs please report it to \nRtr.Akash (7022988445)\nRtr.Harshit (8583829874) ",style: GoogleFonts.lato(fontSize: 17,fontWeight: FontWeight.bold),),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 50),
+                            child: Text("Version 1.0.0",style: GoogleFonts.aBeeZee(fontSize: 40,fontWeight: FontWeight.bold),),
+                          ),
+                          SizedBox(height: 35,),
 
 
 
-                ],
+                        ],
+                      ),
+
 
 
               ),
@@ -231,6 +248,11 @@ class _Upcoming_eventsState extends State<Upcoming_events> {
 
 
       ),
+      ]
+        )
+
+    )
+
 
 
 
@@ -244,3 +266,12 @@ class _Upcoming_eventsState extends State<Upcoming_events> {
 
   }
 }
+
+
+
+
+
+
+
+
+

@@ -5,6 +5,7 @@
 //just use Rotract_2 if you want to make changes
 
 import 'package:flutter/material.dart';
+import 'package:rotract_app_latest/About.dart';
 import 'package:rotract_app_latest/Board/Board.dart';
 import 'package:rotract_app_latest/Board/Rotract_2.dart';
 import 'package:rotract_app_latest/Events/Events.dart';
@@ -42,10 +43,11 @@ class Rotractapp extends StatelessWidget {
         '/Register':(context)=>Register(),
 
         '/Contact': (context) => Contact(),
-        '/Board':(context)=>Board(),
-        // '/Rotract_2':(context)=>Rotract_2(),
+        // '/Board_2':(context)=>Rotract_2(),
+        '/Board':(context)=>Rotract_2(),
         '/u_events':(context)=>Upcoming_events(),
         '/Events':(context)=>Events(),
+        '/About':(context)=>About(),
 
 
       },

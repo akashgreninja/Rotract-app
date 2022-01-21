@@ -180,6 +180,16 @@ class _EventsState extends State<Events> {
 
 
                 ),
+                ListTile(
+                  title: Text("About",style: TextStyle(color: Colors.white),),
+
+                  leading: Icon(Icons.info_outline, color: Colors.grey),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/About');
+                  },
+
+
+                ),
 
 
 
@@ -194,7 +204,7 @@ class _EventsState extends State<Events> {
       ),
 
 
-      body: SafeArea(
+      body: Container(
         child: Stack(
             children :[
 
@@ -212,74 +222,57 @@ class _EventsState extends State<Events> {
               ),
 
 
-              Stack(
-                children: [
+              SingleChildScrollView(
 
-                  SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AppBar(
+                      backgroundColor: Colors.white.withOpacity(0),
 
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          child: AppBar(
-                            backgroundColor: Colors.white.withOpacity(0),
+                    ),
 
+                    SizedBox(height: 180,),
+                    Container(
+                      // height: MediaQuery.of(context).size.height*5.74,
+                      // width: MediaQuery.of(context).size.width*1.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30.0),
+                        color: Colors.white,
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding:EdgeInsets.only(top: 9),
+                            child: Container(
+                              width: 70,
+                              height: 4,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  border: Border.all(
+                                    color: Colors.grey,
+                                  ),
+                                  borderRadius: BorderRadius.all(Radius.circular(20))
+                              ),
+
+
+                            ),
                           ),
-
-
-                        ),
-                        // Container(
-                        //   child: AppBar(
-                        //     backgroundColor: Colors.white.withOpacity(0),
-                        //
-                        //   ),
-                        //
-                        //
-                        // ),
-                        SizedBox(height: 180,),
-                        Container(
-                          height: MediaQuery.of(context).size.height*6.3,
-                          width: MediaQuery.of(context).size.width*1.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30.0),
-                            color: Colors.white,
+                          Padding(
+                            padding:EdgeInsets.only(top: 30),
+                            child: Text(
+                              "Events",
+                              style: GoogleFonts.aBeeZee(fontWeight: FontWeight.bold,fontSize: 70,color: Colors.orange[300]),),
                           ),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                  top: MediaQuery.of(context).size.height*0.01,
-                                  left: MediaQuery.of(context).size.width*0.4,
-                                  child: Container(
-                                    width: 70,
-                                    height: 4,
-                                    decoration: BoxDecoration(
-                                        color: Colors.grey,
-                                        border: Border.all(
-                                          color: Colors.grey,
-                                        ),
-                                        borderRadius: BorderRadius.all(Radius.circular(20))
-                                    ),
+                          Padding(
+                            padding:EdgeInsets.only(top: 40,left: 20,right: 20),
 
-
-                                  )),
-
-                              Positioned(
-                                  top: MediaQuery.of(context).size.height*0.1,
-                                  left: MediaQuery.of(context).size.width*0.2,
-                                  child: Text(
-                                    "Events",
-                                    style: GoogleFonts.aBeeZee(fontWeight: FontWeight.bold,fontSize: 70,color: Colors.orange[300]),)),
-                              Positioned(
-                                top: MediaQuery.of(context).size.width*0.5,
-                                left: MediaQuery.of(context).size.width*0.1,
-                                right: MediaQuery.of(context).size.width*0.1,
-
-                              child: Column(
+                            child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: events.map((e) => Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children:[
                                       Image.asset("assets/${e.pic}",
                                           height:screenSize.height*0.25,width:screenSize.width*0.90),
@@ -291,43 +284,44 @@ class _EventsState extends State<Events> {
 
                                     ]
                                 ),).toList()
-                                  
-
-
-
-                              ),),
-                              Positioned(
-                                  top: MediaQuery.of(context).size.width*13.65,
-                                  left: MediaQuery.of(context).size.width*0.28,
-
-
-                                  child: Text("© Rotract Club Of BIT",style: TextStyle(fontSize: 15,color: Colors.blue[900],fontWeight: FontWeight.bold),))
 
 
 
 
-
-                            ],
-
+                            ),
                           ),
-                        ),
+                          Text("© Rotaract Club Of BIT",style: TextStyle(fontSize: 15,color: Colors.blue[900],fontWeight: FontWeight.bold),),
+                          SizedBox(height: 10,)
 
 
 
 
 
 
-                      ],
 
 
+
+
+
+
+
+
+
+
+                        ],
+
+                      ),
                     ),
 
 
-                  ),
 
 
 
-                ],
+
+                  ],
+
+
+                ),
 
 
               ),
