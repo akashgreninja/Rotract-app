@@ -428,7 +428,7 @@ class _Rotract_2State extends State<Rotract_2> {
                                                         ),
                                                         SizedBox(width: screenSize.width*0.03,),
                                                         InkWell(
-                                                          child: Image.asset('assets/gmail.png',height: 40,width: 40,),
+                                                          child: Image.asset('assets/Gmail2.png',height: 50,width: 50,),
                                                           onTap: () {
 
                                                             launch('mailto:${e.email}');

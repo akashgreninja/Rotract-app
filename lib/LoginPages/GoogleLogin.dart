@@ -60,8 +60,8 @@ class _GoogleLoginState extends State<GoogleLogin> {
                 ),
 
                 Positioned(
-                  bottom: 140,
-                    left: 50,
+                  bottom: screenSize.height*0.16,
+                    left: screenSize.width*0.15,
 
                     child:ElevatedButton(
                       style: ButtonStyle(

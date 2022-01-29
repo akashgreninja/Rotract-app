@@ -6,21 +6,35 @@
 
 // ignore_for_file: file_names
 
+import 'dart:developer';
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:rotract_app_latest/Events/Events.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rotract_app_latest/About.dart';
-
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class Homepage extends StatefulWidget {
 
 
   @override
+
   _HomepageState createState() => _HomepageState();
 }
 
 class _HomepageState extends State<Homepage> {
+  @override
+  void initState() {
+    super.initState();
+    FirebaseMessaging.onMessage.listen((event) {
+      log("Fcm msg rec");
+    });
+  }
+
+
+
   final List<String> Imageurl=[
     'assets/Run_for_hunger(2).jpeg',
     'assets/Treaking1.jpg',
@@ -42,6 +56,8 @@ class _HomepageState extends State<Homepage> {
   }
   @override
   Widget build(BuildContext context) {
+
+
     int _current =0;
 
     var screenSize = MediaQuery.of(context).size;
@@ -180,7 +196,7 @@ class _HomepageState extends State<Homepage> {
                 child:
                 Opacity(
                   opacity: 0.9,
-                  child: Image.asset("assets/Insta temp (1).jpg",height: screenSize.height,width: screenSize.width*1.0,
+                  child: Image.asset("assets/Insta temp (1).jpg",height: screenSize.height*1.0,width: screenSize.width*1.0,
                     fit: BoxFit.fill,),
                 ),
 
@@ -516,9 +532,53 @@ class _HomepageState extends State<Homepage> {
 
 
 
-
-
-
-
   }
 }
+
+// ignore: non_constant_identifier_names
+// Firebase1()async{
+//
+//   FirebaseMessaging messaging = FirebaseMessaging.instance;
+//   messaging.getToken().then((token) => log(token));
+//
+//   NotificationSettings settings = await messaging.requestPermission(
+//     alert: true,
+//     announcement: false,
+//     badge: true,
+//     carPlay: false,
+//     criticalAlert: false,
+//     provisional: false,
+//     sound: true,
+//   );
+//
+//  log('User granted permission: ${settings.authorizationStatus}');
+//
+//   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+//     log("got a msg while in the foreground");
+//     log("message data :${message.data}");
+//
+//     if(message.notification != null){
+//       log("message also cont a noti :${message.notification}");
+//
+//     }
+//   });
+//
+//   FirebaseMessaging.onMessageOpenedApp.listen((event) {
+//     print(event);
+//   });
+//
+//   FirebaseMessaging.onBackgroundMessage((message) => _firebasemessagingbackgroundhandler(message));
+//
+// }
+//
+//
+// Future< void> _firebasemessagingbackgroundhandler(RemoteMessage message)async{
+//   await Firebase.initializeApp();
+//
+// }
+//
+
+// void main() {
+//   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+//   runApp(MyApp());
+// }

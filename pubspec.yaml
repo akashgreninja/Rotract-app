@@ -30,11 +30,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_fonts: ^2.2.0
   url_launcher: ^6.0.18
@@ -45,6 +40,15 @@ dependencies:
   cloud_firestore: ^3.1.6
   top_snackbar_flutter: ^1.0.2
   carousel_slider: ^4.0.0
+  firebase_messaging: ^11.2.6
+  flutter_launcher_icons: ^0.9.2
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/Insta temp (2).jpg"
+  adaptive_icon_foreground: "assets/forthestore.png"
+  adaptive_icon_background: "#000000"
 
 
 
@@ -73,7 +77,6 @@ flutter:
 
   assets:
     - assets/
-
     - assets/logorotaract.png
     - assets/rcbit/
 

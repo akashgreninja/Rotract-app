@@ -200,7 +200,7 @@ class _ContactState extends State<Contact> {
                           padding: const EdgeInsets.only(top: 20),
                           child: Column(
                             children: [
-                              Center(child: Text("ROTARACT CLUB OF BIT",style:GoogleFonts.aBeeZee(fontSize: 35,fontWeight: FontWeight.bold) ,))
+                              Center(child: Text("ROTARACT CLUB OF BIT",style:GoogleFonts.aBeeZee(fontSize: 33,fontWeight: FontWeight.bold) ,))
 
                             ],
                           ),
@@ -227,6 +227,38 @@ class _ContactState extends State<Contact> {
                               ),
 
                             ],
+
+                          ),
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20,left: 40),
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                child: IconButton(
+                                    icon: Icon(Icons.phone),
+                                    onPressed: (){launch("tel:6202613419");}
+                                ),
+                              ),
+                              SizedBox(width:10),
+                              Text("Rtr. Ananya Shree",style: GoogleFonts.aBeeZee(fontSize: 17),),
+
+                            ],
+
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10,right: 100),
+                          child: InkWell(
+                            child: Text(
+                              '+91-6202613419',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            onTap: () {
+                              launch('tel:6202613419');
+                            },
+
 
                           ),
                         ),
@@ -268,42 +300,11 @@ class _ContactState extends State<Contact> {
                               CircleAvatar(
                                 child: IconButton(
                                     icon: Icon(Icons.phone),
-                                    onPressed: (){launch("tel:6202613419");}
-                                ),
-                              ),
-                              SizedBox(width:10),
-                              Text("Rtr. Ananya Shree",style: GoogleFonts.aBeeZee(fontSize: 17),),
-
-                            ],
-
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10,right: 100),
-                          child: InkWell(
-                            child: Text(
-                              '+91-6202613419',
-                              style: TextStyle(fontSize: 18),
-                            ),
-                            onTap: () {
-                              launch('tel:6202613419');
-                            },
-
-
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20,left: 40),
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                child: IconButton(
-                                    icon: Icon(Icons.phone),
                                     onPressed: (){launch("tel:6362796957");}
                                 ),
                               ),
                               SizedBox(width:10),
-                              Text("Rtr. Manish Rakshith",style: GoogleFonts.aBeeZee(fontSize: 17),),
+                              Text("Rtr. Chandan V ",style: GoogleFonts.aBeeZee(fontSize: 17),),
 
                             ],
 
@@ -313,11 +314,11 @@ class _ContactState extends State<Contact> {
                           padding: const EdgeInsets.only(left: 10,right: 100),
                           child: InkWell(
                             child: Text(
-                              '+91-6362796957',
+                              '+91-83105 80739',
                               style: TextStyle(fontSize: 18),
                             ),
                             onTap: () {
-                              launch('tel:6362796957');
+                              launch('tel:83105 80739');
                             },
 
 
