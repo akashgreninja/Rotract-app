@@ -7,6 +7,7 @@
 // ignore_for_file: file_names
 
 import 'dart:developer';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +16,29 @@ import 'package:rotract_app_latest/Events/Events.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rotract_app_latest/About.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+
+const AndroidNotificationChannel channel = AndroidNotificationChannel(
+  'high_importance_channel', // id
+  'High Importance Notifications',
+  // title
+
+  importance: Importance.max,
+
+);
+
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+FlutterLocalNotificationsPlugin();
+
+
+
+
+
+
 
 class Homepage extends StatefulWidget {
+
 
 
   @override
@@ -25,11 +47,31 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+
   @override
   void initState() {
     super.initState();
-    FirebaseMessaging.onMessage.listen((event) {
-      log("Fcm msg rec");
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      RemoteNotification notification = message.notification;
+      AndroidNotification android = message.notification?.android;
+
+      // If `onMessage` is triggered with a notification, construct our own
+      // local notification to show to users using the created channel.
+      if (notification != null && android != null) {
+        flutterLocalNotificationsPlugin.show(
+            notification.hashCode,
+            notification.title,
+            notification.body,
+            NotificationDetails(
+              android: AndroidNotificationDetails(
+                channel.id,
+                channel.name,
+
+                icon: android?.smallIcon,
+                // other properties...
+              ),
+            ));
+      }
     });
   }
 
@@ -95,7 +137,7 @@ class _HomepageState extends State<Homepage> {
                       child: Image.asset("assets/logorotaract.png",width: 100,height: 200,)),
                 ),
                 ListTile(
-                  title: Text("home",style: TextStyle(color: Colors.white),),
+                  title: Text("Home",style: TextStyle(color: Colors.white),),
 
                   leading: Icon(Icons.home, color: Colors.grey),
                   onTap: () {
@@ -172,6 +214,79 @@ class _HomepageState extends State<Homepage> {
 
 
                 ),
+                // ListTile(
+                //   title: Text("Logout",style: TextStyle(color: Colors.white),),
+                //
+                //   leading: Icon(Icons.settings, color: Colors.grey),
+                //   onTap: () {
+                //     Navigator.pushNamed(context, '/Loading');
+                //   },
+                //
+                //
+                // ),
+                ListTile(
+                  title: Text("Get in Touch",style: TextStyle(color: Colors.white),),
+
+                  leading: Icon(Icons.workspaces_outline, color: Colors.grey),
+                  onTap: () {
+                  },
+
+
+                ),
+
+                ListTile(
+                  title: Row(
+                    children: [
+
+                      InkWell(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Image.asset('assets/instagrampng.png',height: screenSize.height*0.10,width: screenSize.width*0.10,),
+                        ),
+                        onTap: () {
+                          launch('https://www.instagram.com/rotaractclubofbit/');
+                        } ,
+                      ),
+                      InkWell(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Image.asset('assets/Linkedin.png',height: screenSize.height*0.10,width: screenSize.width*0.10,),
+                        ),
+                        onTap: () {
+                          launch('https://www.linkedin.com/company/rotaractclubofbit/');
+                        } ,
+                      ),
+                      InkWell(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Image.asset('assets/facebook.png',height: screenSize.height*0.09,width: screenSize.width*0.09,),
+                        ),
+                        onTap: () {
+                          launch('https://www.facebook.com/rctbit/');
+                        } ,
+                      ),
+                      InkWell(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Image.asset('assets/twitter.png',height: screenSize.height*0.10,width: screenSize.width*0.10,),
+                        ),
+                        onTap: () {
+                          launch('https://twitter.com/RotaractBIT?s=08');
+                        } ,
+                      ),
+
+
+
+                    ],
+                  ),
+
+                  // leading: Icon(Icons.info_outline, color: Colors.grey),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/About');
+                  },
+
+
+                ),
 
 
 
@@ -214,6 +329,28 @@ class _HomepageState extends State<Homepage> {
                       backgroundColor: Colors.white.withOpacity(0),
 
                     ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(top: 300),
+                    //   child: CarouselSlider(
+                    //       items: Images2(screenSize),
+                    //       options: CarouselOptions(
+                    //         height: 100,
+                    //         aspectRatio: 1/9,
+                    //         viewportFraction: 0.4,
+                    //         initialPage: 0,
+                    //         enableInfiniteScroll: true,
+                    //         reverse: false,
+                    //         autoPlay: true,
+                    //         autoPlayInterval: Duration(seconds: 4),
+                    //         autoPlayAnimationDuration: Duration(milliseconds: 1000),
+                    //         autoPlayCurve: Curves.decelerate,
+                    //         enlargeCenterPage: false,
+                    //
+                    //         // onPageChanged: callbackFunction,
+                    //         scrollDirection: Axis.horizontal,
+                    //       )
+                    //   ),
+                    // ),
 
 
                     SizedBox(height: 500,),

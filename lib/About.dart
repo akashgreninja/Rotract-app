@@ -61,7 +61,7 @@ class _AboutState extends State<About> {
                       child: Image.asset("assets/logorotaract.png",width: 100,height: 200,)),
                 ),
                 ListTile(
-                  title: Text("home",style: TextStyle(color: Colors.white),),
+                  title: Text("Home",style: TextStyle(color: Colors.white),),
 
                   leading: Icon(Icons.home, color: Colors.grey),
                   onTap: () {
@@ -214,11 +214,11 @@ class _AboutState extends State<About> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 20,left: 20,right: 30),
-                            child: Text("This app is developed using Flutter \nmade by Rtr.Akash Uday (web service director) for the Rotaract club of BIT          ",style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.bold),),
+                            child: Text("This app is developed using Flutter \nmade by Rtr.Akash Uday (web service director) for the Rotaract club of BIT.          ",style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.bold),),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 20,left: 20,right: 30),
-                            child: Text("Special thanks to \nAkshay Kumar U Apsangi and the Rotract team for assisting me  ",style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.bold),),
+                            child: Text("Special thanks to \nAkshay Kumar U and the Rotract team for assisting me. ",style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.bold),),
                           ),
 
                           Padding(

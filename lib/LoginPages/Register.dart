@@ -33,12 +33,15 @@ class _RegisterState extends State<Register> {
 
 
   static List <String> branches=[
-    'CS',
-    'AI',
-    'EC',
-    'EEE',
-    'IE',
-    'MECH'
+    'Civil ',
+    'Mechanical ',
+    'Electrical & Electronics ',
+    'Computer Science',
+    'Electronics & Instrumentation',
+    'Electronics & Telecommunication',
+    'Industrial Engineering & Management',
+    'Information Science',
+    'Artificial Intelligence and Machine Learning',
   ];
 
 
@@ -96,9 +99,9 @@ class _RegisterState extends State<Register> {
                                         padding: EdgeInsets.only(left: 20,right: 20),
                                         child: TextFormField(
                                           decoration: InputDecoration(
-                                              hintText: "   Your full name",
+                                              hintText: "Your full name",
                                               hintStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w300),
-                                              contentPadding: EdgeInsets.only(top: -10,),
+                                              contentPadding: EdgeInsets.only(top: -10,left:15),
                                               border: OutlineInputBorder(
                                                   borderRadius: BorderRadius.circular(10),
                                                   borderSide: BorderSide(width: 2.0,style: BorderStyle.solid)
@@ -134,9 +137,11 @@ class _RegisterState extends State<Register> {
 
                                           decoration: InputDecoration(
 
-                                              hintText: "   Your full Usn",
+                                              hintText: "Your full Usn",
+
                                               hintStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w300),
-                                              contentPadding: EdgeInsets.only(top: -10,),
+                                              contentPadding: EdgeInsets.only(top: -10,left:15 ),
+
                                               border: OutlineInputBorder(
                                                   borderRadius: BorderRadius.circular(10),
                                                   borderSide: BorderSide(width: 2.0,style: BorderStyle.solid)
@@ -178,9 +183,9 @@ class _RegisterState extends State<Register> {
 
                                           decoration: InputDecoration(
 
-                                              hintText: "  9034678997",
+                                              hintText: "9034678997",
                                               hintStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w300),
-                                              contentPadding: EdgeInsets.only(top: -10,),
+                                              contentPadding: EdgeInsets.only(top: -10,left:15),
                                               border: OutlineInputBorder(
                                                   borderRadius: BorderRadius.circular(10),
                                                   borderSide: BorderSide(width: 2.0,style: BorderStyle.solid)
@@ -218,9 +223,9 @@ class _RegisterState extends State<Register> {
 
                                           decoration: InputDecoration(
 
-                                              hintText: "  abc@gmail.com",
+                                              hintText: "abc@gmail.com",
                                               hintStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w300),
-                                              contentPadding: EdgeInsets.only(top: -10,),
+                                              contentPadding: EdgeInsets.only(top: -10,left: 15),
                                               border: OutlineInputBorder(
                                                   borderRadius: BorderRadius.circular(10),
                                                   borderSide: BorderSide(width: 2.0,style: BorderStyle.solid)
@@ -276,9 +281,9 @@ class _RegisterState extends State<Register> {
                                                 focusNode: focusNode,
                                                 onEditingComplete: onEditing,
                                                 decoration: InputDecoration(
-                                                  hintText: "  Start Typing... ",
+                                                  hintText: "Start Typing... ",
                                                   hintStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w300),
-                                                  contentPadding: EdgeInsets.only(top: -10,),
+                                                  contentPadding: EdgeInsets.only(top: -10,left:15),
                                                   border: OutlineInputBorder(
                                                       borderRadius: BorderRadius.circular(10),
                                                       borderSide: BorderSide(width: 2.0,style: BorderStyle.solid)

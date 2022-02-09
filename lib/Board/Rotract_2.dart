@@ -229,7 +229,7 @@ class _Rotract_2State extends State<Rotract_2> {
                       child: Image.asset("assets/logorotaract.png",width: 100,height: 200,)),
                 ),
                 ListTile(
-                  title: Text("home",style: TextStyle(color: Colors.white),),
+                  title: Text("Home",style: TextStyle(color: Colors.white),),
 
                   leading: Icon(Icons.home, color: Colors.grey),
                   onTap: () {
@@ -356,7 +356,7 @@ class _Rotract_2State extends State<Rotract_2> {
                     //
                     //
                     // ),
-                    SizedBox(height: 500,),
+                    SizedBox(height: 300,),
                     Container(
                       // height: MediaQuery.of(context).size.height*1.9,
                       width: MediaQuery.of(context).size.width*1.0,
@@ -403,12 +403,12 @@ class _Rotract_2State extends State<Rotract_2> {
                                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                   children: [
                                                     Text(e.name,style: GoogleFonts.aBeeZee(fontSize: 16),),
-                                                    Text(e.Designation,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w300),),
+                                                    Text(e.Designation,style: TextStyle(fontSize: screenSize.height*0.0185,fontWeight: FontWeight.w300),),
 
                                                     Row(
                                                       children: [
                                                         InkWell(
-                                                          child: Image.asset('assets/instagram.jpg',height: 35,width: 35,),
+                                                          child: Image.asset('assets/instagram.jpg',height: screenSize.height*0.09,width: screenSize.width*0.09,),
                                                           onTap: () {
 
                                                             launch(
@@ -420,7 +420,7 @@ class _Rotract_2State extends State<Rotract_2> {
                                                         ),
                                                         SizedBox(width:  screenSize.width*0.03,),
                                                         InkWell(
-                                                          child: Image.asset('assets/Linkedin.png',height: 70,width: 70,),
+                                                          child: Image.asset('assets/Linkedin.png',height: screenSize.height*0.09,width: screenSize.width*0.15,),
                                                           onTap: () {
 
                                                             launch('${e.linkedIn}');
@@ -428,7 +428,7 @@ class _Rotract_2State extends State<Rotract_2> {
                                                         ),
                                                         SizedBox(width: screenSize.width*0.03,),
                                                         InkWell(
-                                                          child: Image.asset('assets/Gmail2.png',height: 50,width: 50,),
+                                                          child: Image.asset('assets/Gmail2.png',height: screenSize.height*0.09,width: screenSize.width*0.13,),
                                                           onTap: () {
 
                                                             launch('mailto:${e.email}');

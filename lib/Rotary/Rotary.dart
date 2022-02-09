@@ -61,7 +61,7 @@ class _RotaryState extends State<Rotary> {
                       child: Image.asset("assets/logorotaract.png",width: 100,height: 200,)),
                 ),
                 ListTile(
-                  title: Text("home",style: TextStyle(color: Colors.white),),
+                  title: Text("Home",style: TextStyle(color: Colors.white),),
 
                   leading: Icon(Icons.home, color: Colors.grey),
                   onTap: () {

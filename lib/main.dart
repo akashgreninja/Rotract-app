@@ -20,10 +20,17 @@ import 'package:rotract_app_latest/LoginPages/Register.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 
+
+
+
+
+
 Future< void> _firebaseMessagingBackgroundHandler(RemoteMessage message)async{
 
 
 }
+
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -23,6 +23,8 @@ import 'package:rotract_app_latest/LoginPages/Register.dart';
 class GoogleLogin extends StatefulWidget {
 
 
+
+
   @override
   _GoogleLoginState createState() => _GoogleLoginState();
 }
@@ -33,15 +35,44 @@ class _GoogleLoginState extends State<GoogleLogin> {
   GoogleSignInAccount signedAccount ;
 
   @override
+  void initState() {
+    super.initState();
+    googleSignIn.onCurrentUserChanged.listen((GoogleSignInAccount account) {
+      setState(() {
+        signedAccount = account;
+      });
+      if (signedAccount != null) {
+        Navigator.pushReplacementNamed(context, '/');
+        // handleGetContact();
+      }
+    });
+    googleSignIn.signInSilently();
+  }
+
+
+  @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return  SafeArea(
       child: SingleChildScrollView(
         child: Container(
 
-          child:
-          Stack(
+          child: Stack(
               children :[
+                // StreamBuilder(
+                //     builder:(context,snapshot) {
+                //       if (snapshot.connectionState == ConnectionState.waiting)
+                //         return null;
+                //       else if(snapshot.hasData){
+                //         return Loggedin
+                //
+                //       }
+                //
+                //
+                // },
+                //
+                //
+                // ),
 
                 Center(
                   child:
@@ -61,7 +92,7 @@ class _GoogleLoginState extends State<GoogleLogin> {
 
                 Positioned(
                   bottom: screenSize.height*0.16,
-                    left: screenSize.width*0.15,
+                    left: screenSize.width*0.25,
 
                     child:ElevatedButton(
                       style: ButtonStyle(
@@ -69,10 +100,10 @@ class _GoogleLoginState extends State<GoogleLogin> {
                           shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
                         // side: MaterialStateProperty.all(BorderSide(width: 2,)),
                         padding: MaterialStateProperty.all(EdgeInsets.only(left: 30,right: 30,top: 20,bottom: 20))
-                          
+
 
                       ),
-                      child: Text("Sign in/Register",style: GoogleFonts.aBeeZee(fontSize: 30,color: Colors.white),),
+                      child: Text("Sign in/Register",style: GoogleFonts.aBeeZee(fontSize: 20,color: Colors.white),),
                       onPressed: () async{
                         await googleSignIn.signOut();
                         try{
